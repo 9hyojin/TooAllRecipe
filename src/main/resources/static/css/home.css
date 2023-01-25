@@ -1,0 +1,52 @@
+header > div.frame {
+  box-sizing: border-box;
+  height: 23.5rem;
+  overflow: hidden;
+  padding: 2.35rem 2.9rem 2.35rem 1.65rem;
+  position: relative;
+  width: 100%;
+}
+
+  .frame .inner-frame{
+    align-items: flex-start;
+    display: flex;
+    height: 12.9rem;
+    width: 100%;
+  }
+
+    .to-all-recipe {
+      align-items: baseline;
+      color: #000000;
+      display: flex;
+      flex-shrink: 0;
+      font-family: Fugaz One, 'Source Sans Pro';
+      font-size: 6.4rem;
+      font-weight: 400;
+      justify-content: center;
+      line-height: 1.4675;
+      margin: 3.5rem 55.95rem 0rem 0rem;
+      white-space: nowrap;
+    }
+
+      .to-all {
+        color: #f3d121;
+        font-family: Fugaz One, 'Source Sans Pro';
+        font-size: 6.4rem;
+        font-weight: 400;
+        line-height: 1.4675;
+      }
+      .recipe {
+      }
+
+    .home {
+      align-items: center;
+      color: #ffffff;
+      display: flex;
+      flex-shrink: 0;
+      font-family: Fugaz One, 'Source Sans Pro';
+      font-size: 4rem;
+      font-weight: 400;
+      justify-content: center;
+      line-height: 1.4675;
+      white-space: nowrap;
+    }
