@@ -9,8 +9,8 @@
 
 .d-inline-block{
     padding-left: 30px;
-    width: 150px;
-    height: 40px;
+    width: 200px;
+    height: 50px;
 }
 
 .justify-content-end{
@@ -25,21 +25,25 @@
 }
 
 .first-text{
-    padding-top: 8%;
+    padding-top: 6%;
     text-align: center;
     font-size: xxx-large;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .second-text{
     padding-top: 3%;
     text-align: center;
     font-size: small;
-    font-weight: normal;
+    font-weight: bold;
     line-height: 200%;
 }
 
 .button-space{
     text-align: center;
     padding-top: 1%;
+}
+
+.text-center{
+    padding-top: 8%;
 }
