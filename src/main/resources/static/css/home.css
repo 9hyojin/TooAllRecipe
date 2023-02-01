@@ -32,7 +32,7 @@
 }
 
 .second-text{
-    padding-top: 3%;
+    padding-top: 5%;
     text-align: center;
     font-size: small;
     font-weight: bold;
@@ -41,10 +41,19 @@
 
 .button-space{
     text-align: center;
-    padding-top: 1%;
+    padding-top: 3%;
 }
 
 .home-images{
-    padding: 10%;
+    padding: 8%;
+}
+
+.home-schedules{
+    background-color: whitesmoke;
+    padding: 6%;
+}
+
+.cards{
+    padding: 8%;
 }
 
