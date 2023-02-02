@@ -5,6 +5,9 @@
     font-weight: bolder;
     padding-right: 30px;
 }
+.nav-item>a{
+    color: black;
+}
 .d-inline-block{
     padding-left: 30px;
     width: 200px;
@@ -40,6 +43,7 @@
     --bs-btn-padding-y: .25rem;
     --bs-btn-padding-x: .5rem;
     --bs-btn-font-size: .75rem;
+
 }
 .home-images{
     padding: 8%;
@@ -77,15 +81,42 @@
     text-align: center;
     padding: 8%;
 }
-.button-recipes{
-    padding-top: 35px;
+.button{
+    padding-top: 20px;
+}
+.btn-secondary{
+    --bs-btn-padding-y: .25rem;
+    --bs-btn-padding-x: .5rem;
+    --bs-btn-font-size: .75rem;
 }
 .recipes-category{
     text-align: center;
     padding: 8%;
     font-weight: bold;
 }
+.recipes-category>a{
+    color: black;
+}
 .home-our-process{
     padding: 8%;
-    background-color: peru;
+    background-color: rgba(202,146,76,1);
+}
+.home-community{
+    padding: 8%;
+}
+.card-text{
+    font-weight: bold;
+}
+.home-contact{
+    padding: 8%;
+    background-color: rgba(145,67,50,1);
+}
+.contact-title{
+    color: white;
+}
+.card-body>a{
+    color: black;
+}
+a:link{
+    text-decoration: none;
 }
