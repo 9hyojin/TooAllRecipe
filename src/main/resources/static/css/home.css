@@ -1,36 +1,30 @@
 #header{
     position: relative;
 }
-
 .nav-item{
     font-weight: bolder;
     padding-right: 30px;
 }
-
 .d-inline-block{
     padding-left: 30px;
     width: 200px;
     height: 50px;
 }
-
 .justify-content-end{
     padding-right: 30px;
 }
-
 #container{
     position: relative;
     width: 1200px;
     padding: 20px 30px;
     margin: 0 auto;
 }
-
 .first-text{
     padding-top: 6%;
     text-align: center;
     font-size: xxx-large;
     font-weight: bold;
 }
-
 .second-text{
     padding-top: 5%;
     text-align: center;
@@ -38,22 +32,56 @@
     font-weight: bold;
     line-height: 200%;
 }
-
 .button-space{
     text-align: center;
     padding-top: 3%;
 }
-
+.btn-warning{
+    --bs-btn-padding-y: .25rem;
+    --bs-btn-padding-x: .5rem;
+    --bs-btn-font-size: .75rem;
+}
 .home-images{
     padding: 8%;
 }
-
+.home-about{
+    padding: 8%;
+    background-color: floralwhite;
+}
+.about-text{
+    font-size: small;
+    text-align: left;
+    font-weight: bold;
+    padding-top: 4%;
+}
+.about-a{
+    font-size: small;
+    text-align: left;
+    color: sienna;
+    padding-top: 8%;
+}
 .home-schedules{
     background-color: whitesmoke;
     padding: 6%;
 }
-
 .cards{
     padding: 8%;
 }
-
+.card{
+    max-height: 350px;
+}
+.recipes-text{
+    align-content: center;
+}
+.home-recipes{
+    text-align: center;
+    padding: 8%;
+}
+.button-recipes{
+    padding-top: 35px;
+}
+.recipes-category{
+    text-align: center;
+    padding: 8%;
+    font-weight: bold;
+}
