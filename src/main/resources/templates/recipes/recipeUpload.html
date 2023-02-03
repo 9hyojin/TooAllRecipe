@@ -37,6 +37,20 @@
         </nav>
     </div>
 
+    <div id="container" role="main">
+        <div class="layout">
+            <form action="/recipes/upload" method="post" enctype="multipart/form-data">
+                <input name="title" type="text">
+                <textarea name="content"></textarea>
+                <button type="submit">작성</button>
+                <input type="file" multiple="multiple" name="files">
+            </form>
+        </div>
+    </div>
+
+
+
+
 
 
 </div>

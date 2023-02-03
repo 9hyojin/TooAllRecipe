@@ -1,6 +1,12 @@
 #header{
     position: relative;
 }
+#container{
+    position: relative;
+    width: 1200px;
+    padding: 20px 30px;
+    margin: 0 auto;
+}
 .nav-item{
     font-weight: bolder;
     padding-right: 30px;
@@ -15,4 +21,48 @@
 }
 .justify-content-end{
     padding-right: 30px;
+}
+.recipes-text2{
+    padding-top: 6%;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: bold;
+}
+.recipes-text3{
+    padding-top: 5%;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    line-height: 200%;
+}
+.home-recipes{
+    text-align: center;
+    padding: 8%;
+}
+.recipes-category>a{
+    color: black;
+    font-size: large;
+    padding: 30px;
+}
+.recipes-category{
+    text-align: center;
+    padding: 8%;
+    font-weight: bold;
+}
+.recipes-category>a:hover{
+    color: saddlebrown;
+}
+.recipes-category>a:active{
+    color: saddlebrown;
+}
+a:link{
+    text-decoration: none;
+}
+.recipe-choice{
+    padding: 8%;
+}
+.recipe-choice-text1{
+    font-size: x-large;
+    font-weight: bold;
+    text-align: left;
 }
