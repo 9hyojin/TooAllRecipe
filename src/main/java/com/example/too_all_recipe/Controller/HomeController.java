@@ -11,7 +11,8 @@ public class HomeController {
     }
 
     @GetMapping("/recipes")
-    public String recipes(){return"./recipes/recipes";}
+    public String recipes(){return"/recipes/recipes";}
+
 
 
 }

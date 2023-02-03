@@ -14,5 +14,4 @@ public class RecipeDTO {
     private String filename;
     private String filepath;
 
-
 }
