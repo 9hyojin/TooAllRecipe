@@ -80,8 +80,6 @@ a:link{
 
 .recipe-form{
     background-color: rgb(249,249,249);
-    width: 700px;
-    padding: 5%;
 }
 .upload-text1{
     font-size: xx-large;
@@ -94,5 +92,8 @@ a:link{
     padding-top: 5%;
 }
 input{
+    width:500px;
+}
+textarea{
     width:500px;
 }

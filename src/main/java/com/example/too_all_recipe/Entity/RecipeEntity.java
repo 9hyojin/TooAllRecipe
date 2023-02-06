@@ -18,25 +18,29 @@ public class RecipeEntity {
     @Column(length = 45 , nullable = false)
     private String title;
 
-    @Column(length = 500 , nullable = false)
+    @Column(length = 300)
+    private String introduce;
+
+    @Column(length = 800 , nullable = false)
     private String content;
 
-    @Column (length = 45)
-    private String filename;
+    @Column(length = 500, nullable = false)
+    private String ingredients;
 
-    @Column(length = 300)
-    private String filepath;
+    @Column(length = 20)
+    private String cookingTime;
+
+
 
     public static RecipeEntity toSaveEntity(RecipeDTO recipeDTO){
         RecipeEntity recipeEntity = new RecipeEntity();
         recipeEntity.setTitle(recipeDTO.getTitle());
+        recipeEntity.setIntroduce(recipeDTO.getIntroduce());
+        recipeEntity.setCookingTime(recipeDTO.getCookingTime());
         recipeEntity.setContent(recipeDTO.getContent());
-        recipeEntity.setFilename(recipeDTO.getFilename());
-        recipeEntity.setFilepath(recipeDTO.getFilepath());
+        recipeEntity.setIngredients(recipeDTO.getIngredients());
         return recipeEntity;
     }
-
-
 
 
 }
