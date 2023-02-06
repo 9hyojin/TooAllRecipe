@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 @Controller
 @RequiredArgsConstructor
 public class RecipeController {
@@ -20,12 +18,10 @@ public class RecipeController {
     }
 
     @PostMapping("/recipes")
-    public String recipeUpload(@ModelAttribute RecipeDTO recipeDTO){
+    public String recipeSave(@ModelAttribute RecipeDTO recipeDTO){
         recipeService.save(recipeDTO);
         return "/recipes/recipes";
     }
 
-
-
-
 }
+
