@@ -25,7 +25,7 @@ public class RecipeController {
     }
 
     @PostMapping("/recipes/save")
-    public String save(@ModelAttribute RecipeDTO recipeDTO){
+    public String save(@ModelAttribute RecipeDTO recipeDTO) throws IOException {
         recipeService.save(recipeDTO);
         return "/recipes/list";
     }

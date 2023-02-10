@@ -30,6 +30,9 @@ public class RecipeEntity {
     @Column(length = 20)
     private String cookingTime;
 
+    @Column
+    private Integer fileAttached; //첨부 1 or 미첨부 0
+
 
 
     public static RecipeEntity toSaveEntity(RecipeDTO recipeDTO){
@@ -39,6 +42,7 @@ public class RecipeEntity {
         recipeEntity.setCookingTime(recipeDTO.getCookingTime());
         recipeEntity.setContent(recipeDTO.getContent());
         recipeEntity.setIngredients(recipeDTO.getIngredients());
+        recipeEntity.setFileAttached(0); //파일 미첨부
         return recipeEntity;
     }
 

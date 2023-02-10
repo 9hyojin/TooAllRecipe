@@ -17,6 +17,11 @@ public class RecipeDTO {
     private String ingredients;
     private String cookingTime;
 
+    private MultipartFile recipeFile;  //save.html -> Controller 파일 담는 용도
+    private String originalFileName; //원본 파일 이름
+    private String storedFileName; // 서버 저장용 파일 이름 - 식별자 (uuid사용해도 됨)
+    private Integer FileAttached; //파일 첨부 여부 (첨부 1, 미첨부 0)
+
     public static RecipeDTO toRecipeDTO(RecipeEntity recipeEntity){
         RecipeDTO recipeDTO = new RecipeDTO();
         recipeDTO.setId(recipeEntity.getId());
@@ -28,9 +33,4 @@ public class RecipeDTO {
         return recipeDTO;
     }
 
-
-//    private MultipartFile recipeFile;  //save.html -> Controller 로 파일을 담는 용도
-//    private String originalFileName;  //원래 파일이름
-//    private String storedFileName;  //서버 저장용 파일 이름 (식별자)
-//    private int fileAttached;  //파일 첨부 여부 (첨부 1, 미첨부 0)
 }

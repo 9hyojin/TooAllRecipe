@@ -16,9 +16,32 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RecipeService {
     private final RecipeRepository recipeRepository;
-    public void save(RecipeDTO recipeDTO) {
-        RecipeEntity recipeEntity = RecipeEntity.toSaveEntity(recipeDTO);
-        recipeRepository.save(recipeEntity);
+    public void save(RecipeDTO recipeDTO) throws IOException {
+        //파일 첨부 여부에 따라 로직 분리
+        if (recipeDTO.getRecipeFile().isEmpty()){
+            //첨부파일 없음
+            RecipeEntity recipeEntity = RecipeEntity.toSaveEntity(recipeDTO);
+            recipeRepository.save(recipeEntity);
+        } else{
+            //첨부파일 있음
+            /*
+                1. DTO에 담긴 파일을 꺼냄
+                2.파일의 이름 가져옴
+                3. 서버 저장용 이름을 만듦
+                4. 저장 경로 설정
+                5. 해당 경로에 파일 저장
+                6. recipe_table에 해당 데이터 save처리
+                7. recipe_file_table에 해당 데이터 save처리
+             */
+            MultipartFile recipeFile = recipeDTO.getRecipeFile(); // 1.
+            String originalFilename = recipeFile.getOriginalFilename(); // 2.
+            String storedFileName = System.currentTimeMillis() + "_" + originalFilename; // 3.  uuid를 사용해도 되고, currentTimeMillis 사용해도 됨.
+            String savePath = "/Users/koo/springboot_img/" + storedFileName;
+            recipeFile.transferTo(new File(savePath)); // 5.
+
+        }
+
+
     }
 
 
@@ -34,26 +57,7 @@ public class RecipeService {
 }
 
 
-//        //파일 첨부 여부에 따라 로직 분리
-//        if (recipeDTO.getRecipeFile().isEmpty()){
-//            //첨부파일이 없는 경우
-//
-//        } else{
-//            //첨부파일이 있는 경우
-//            /*
-//            1. DTO에 담긴 파일을 꺼냄
-//            2. 파일의 이름 가져옴
-//            3. 서버 저장용 이름주기
-//            4. 저장 경로 설정
-//            5. 해당 경로에 파일 저장
-//            6. recipe_table에 해장 데이터 save 처리
-//            7. recipe_file_table에 해당 데이터 save 처리
-//             */
-//            MultipartFile recipeFile = recipeDTO.getRecipeFile(); // 1.
-//            String originalFilename = recipeFile.getOriginalFilename(); // 2.
-//            String storedFileName = System.currentTimeMillis() + "_" + originalFilename; // 3.  uuid를 사용해도 되고, currentTimeMillis 사용해도 됨.
-//            String savePath = "C:/ToAllRecipe_img/" + storedFileName; // 4.  Mac은 "/Users/사용자이름/ToAllRecipe_img/" + storedFileName
-//            recipeFile.transferTo(new File(savePath)); // 5.
-//
-//
-//        }
+
+
+
+

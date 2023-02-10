@@ -39,17 +39,16 @@
     <div id="container" role="main" >
         <div class="recipe-form">
             <p class="upload-text1">레시피올리기</p>
-            <form action="/recipes/save" method="post">
+            <form action="/recipes/save" method="post" enctype="multipart/form-data" >
                 <div class="container text-center">
                     <div class="row g-2">
                         <div class="col-md-8">
                             <div class="p-1">
                                 <div class="recipe-form-text">
-                                    <p>제목 <input name="title" type="text" placeholder="예) 저탄수 가지덮밥"></p>
-                                    <p>요리 소개 <input name="introduce" type="text" placeholder="요리를 간단히 소개해주세요"></p>
-                                    <p>조리 시간 <input name="cookingTime" type="text" placeholder="예) 80분"></p>
-                                    <p>재료 목록 <textarea name="ingredients" type="text" placeholder="정확한 양을 적어주세요"></textarea></p>
-                                    <p>레시피 순서 <textarea name="content" type="text" placeholder="자세하게 적어주세요"></textarea></p>
+                                    <p style="vertical-align: top">제목 <input name="title" type="text" placeholder="예) 저탄수 가지덮밥"></p>
+                                    <p style="vertical-align: top">요리 소개 <textarea name="introduce" type="text" placeholder="요리를 간단히 소개해주세요" style="height: 100px;"></textarea></p>
+                                    <p style="vertical-align: top">조리 시간 <input name="cookingTime" type="text" placeholder="예) 80분"></p>
+                                    <p style="vertical-align: top">레시피 순서 <textarea name="content" type="text" placeholder="자세하게 적어주세요" style="height: 500px;"></textarea></p>
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" onclick="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,19 +64,18 @@
                                         <li><a class="dropdown-item">Drinks</a></li>
                                     </ul>
                                 </div>
-                                <div style="text-align: center"><input type="submit" value="작성"></div>
                             </div>
                         </div>
                         <div class="col-md-2">
-<!--                            <div class="p-1">-->
-<!--                                <p><input type="file" name="recipeThumb"></p>-->
-<!--                                <p><input type="submit" value="썸네일업로드" style="width: 200px;"></p>-->
-<!--                            </div>-->
+                            <div class="p-1">
+                                <p><input type="file" name="recipeFile"></p>
+                                <p style="vertical-align: top">재료 목록 <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 200px; height: 500px;"></textarea></p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div style="text-align: center"><input type="submit" value="작성"></div>
             </form>
-
         </div>
     </div>
 
