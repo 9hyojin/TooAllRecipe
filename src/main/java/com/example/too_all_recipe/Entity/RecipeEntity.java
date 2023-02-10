@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -32,6 +35,11 @@ public class RecipeEntity {
 
     @Column
     private Integer fileAttached; //첨부 1 or 미첨부 0
+
+    //레시피 하나당 여러 파일 가능
+    @OneToMany(mappedBy = "recipeEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<FileEntity> fileEntityList = new ArrayList<>();
+
 
 
 

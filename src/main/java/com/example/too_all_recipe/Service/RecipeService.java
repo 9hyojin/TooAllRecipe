@@ -18,7 +18,7 @@ public class RecipeService {
     private final RecipeRepository recipeRepository;
     public void save(RecipeDTO recipeDTO) throws IOException {
         //파일 첨부 여부에 따라 로직 분리
-        if (recipeDTO.getRecipeFile().isEmpty()){
+        if (recipeDTO.getFile().isEmpty()){
             //첨부파일 없음
             RecipeEntity recipeEntity = RecipeEntity.toSaveEntity(recipeDTO);
             recipeRepository.save(recipeEntity);
@@ -33,11 +33,11 @@ public class RecipeService {
                 6. recipe_table에 해당 데이터 save처리
                 7. recipe_file_table에 해당 데이터 save처리
              */
-            MultipartFile recipeFile = recipeDTO.getRecipeFile(); // 1.
-            String originalFilename = recipeFile.getOriginalFilename(); // 2.
+            MultipartFile file = recipeDTO.getFile(); // 1.
+            String originalFilename = file.getOriginalFilename(); // 2.
             String storedFileName = System.currentTimeMillis() + "_" + originalFilename; // 3.  uuid를 사용해도 되고, currentTimeMillis 사용해도 됨.
             String savePath = "/Users/koo/springboot_img/" + storedFileName;
-            recipeFile.transferTo(new File(savePath)); // 5.
+            file.transferTo(new File(savePath)); // 5.
 
         }
 
