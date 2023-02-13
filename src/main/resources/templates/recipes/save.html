@@ -48,9 +48,7 @@
                                     <p style="padding-top: 20px;">제목 <input name="title" type="text" placeholder="예) 저탄수 가지덮밥" style="border: solid;"></p>
                                     <p style="padding-top: 15px;">요리 소개 <textarea name="introduce" type="text" placeholder="요리를 간단히 소개해주세요" style="height: 100px; text-align: left; border: solid; vertical-align: top;"></textarea></p>
                                     <div class="dropdown" style="padding-top: 10px;">
-                                        <button class="btn btn-secondary dropdown-toggle" onclick="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            카테고리 선택
-                                        </button>
+                                        <button class="btn btn-secondary dropdown-toggle" onclick="" type="button" data-bs-toggle="dropdown" aria-expanded="false">카테고리 선택</button>
                                         <p style="font-size: small; color: dimgray; padding-top: 15px;">카테고리를 꼭 선택해주세요!</p>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item">Hot dishes</a></li>
@@ -61,55 +59,53 @@
                                             <li><a class="dropdown-item">Drinks</a></li>
                                         </ul>
                                     </div>
-
                                     <p style="vertical-align: top; padding-top: 15px;">조리 시간 <input name="cookingTime" type="text" placeholder="예) 80분" style="border: solid"></p>
-                                    <p style="vertical-align: top; padding-top: 15px;">레시피 순서<textarea name="content" type="text" placeholder="자세하게 적어주세요" style="height: 800px; border: solid; vertical-align: top;"></textarea></p>
-                                    <div id="image_container" style="width: 300px; height: 300px; border: black solid;"></div>
-                                    <p><input type="file" id="image" name="file" accept="image/*" onchange="setThumbnail(event);" style="padding-top: 5px;"></p>
-                                    <p style="vertical-align: top; text-align: left; padding-top: 30px;">재료 목록
-                                        <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 300px; height: 500px; border: solid;">
+                                    <p style="vertical-align: top; padding-top: 30px; ">레시피 순서
+                                    <input type="file" id="image" name="file" accept="image/*" onchange="setImage(event);">
+                                    <div style="padding-left: 100px;">
+                                        <div contentEditable="true" name="content" type="text" placeholder="자세하게 적어주세요" style="width: 500px; height: 800px; border: solid; vertical-align: top; text-align: center">
+                                            <div id="image_container"></div>
+                                            <script>
+                                                function setImage(event) {
+                                                    const reader = new FileReader();
 
-                                        </textarea></p>
-                                    <script>
-                                        function setThumbnail(event) {
-                                            const reader = new FileReader();
+                                                    reader.onload = function(event) {
+                                                        const img = document.createElement("img");
+                                                        img.setAttribute("src", event.target.result);
+                                                        img.style.width = '200px';
+                                                        img.style.height = '200px';
+                                                        document.querySelector("div#image_container").appendChild(img);
+                                                    };
 
-                                            reader.onload = function(event) {
-                                                const img = document.createElement("img");
-                                                img.setAttribute("src", event.target.result);
-                                                img.style.width = '300px';
-                                                img.style.height = '300px';
-                                                document.querySelector("div#image_container").appendChild(img);
-                                            };
-
-                                            reader.readAsDataURL(event.target.files[0]);
-                                        }
-                                    </script>
+                                                    reader.readAsDataURL(event.target.files[0]);
+                                                }
+                                            </script></p>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="p-1">
                                 <p>대표이미지를 선택해주세요</p>
+                                <p><input type="file" id="thumb" name="file" accept="image/*" onchange="setThumbnail(event);"></p>
                                 <div id="thumb_container" style="width: 300px; height: 300px; border: black solid;"></div>
-                                <p><input type="file" id="thumb" name="file" accept="image/*" onchange="setThumbnail(event);" style="padding-top: 5px;"></p>
-                                <p style="vertical-align: top; text-align: left; padding-top: 30px;">재료 목록 <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 300px; height: 500px; border: solid;"></textarea></p>
                                 <script>
                                     function setThumbnail(event) {
                                         const reader = new FileReader();
 
                                         reader.onload = function(event) {
-                                            const thumb = document.createElement("thumb");
-                                            thumb.setAttribute("src", event.target.result);
-                                            thumb.style.width = '300px';
-                                            thumb.style.height = '300px';
-                                            document.querySelector("div#thumb_container").appendChild(thumb);
+                                            const img = document.createElement("img");
+                                            img.setAttribute("src", event.target.result);
+                                            img.style.width = '300px';
+                                            img.style.height = '300px';
+                                            document.querySelector("div#thumb_container").appendChild(img);
                                         };
 
                                         reader.readAsDataURL(event.target.files[0]);
                                     }
                                 </script>
+                                <p style="vertical-align: top; text-align: left; padding-top: 20px;">재료 목록 <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 300px; height: 600px; border: solid"></textarea></p>
                             </div>
                         </div>
                     </div>
