@@ -38,43 +38,83 @@
     </div>
     <div id="container" role="main" >
         <div class="recipe-form">
-            <p class="upload-text1">레시피올리기</p>
+            <p class="upload-text1" style="padding-top: 50px;">레시피올리기</p>
             <form action="/recipes/save" method="post" enctype="multipart/form-data" >
                 <div class="container text-center">
                     <div class="row g-2">
                         <div class="col-md-8">
                             <div class="p-1">
                                 <div class="recipe-form-text">
-                                    <p style="vertical-align: top">제목 <input name="title" type="text" placeholder="예) 저탄수 가지덮밥"></p>
-                                    <p style="vertical-align: top">요리 소개 <textarea name="introduce" type="text" placeholder="요리를 간단히 소개해주세요" style="height: 100px;"></textarea></p>
-                                    <p style="vertical-align: top">조리 시간 <input name="cookingTime" type="text" placeholder="예) 80분"></p>
-                                    <p style="vertical-align: top">레시피 순서 <textarea name="content" type="text" placeholder="자세하게 적어주세요" style="height: 500px;"></textarea></p>
+                                    <p style="padding-top: 20px;">제목 <input name="title" type="text" placeholder="예) 저탄수 가지덮밥" style="border: solid;"></p>
+                                    <p style="padding-top: 15px;">요리 소개 <textarea name="introduce" type="text" placeholder="요리를 간단히 소개해주세요" style="height: 100px; text-align: left; border: solid; vertical-align: top;"></textarea></p>
+                                    <div class="dropdown" style="padding-top: 10px;">
+                                        <button class="btn btn-secondary dropdown-toggle" onclick="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            카테고리 선택
+                                        </button>
+                                        <p style="font-size: small; color: dimgray; padding-top: 15px;">카테고리를 꼭 선택해주세요!</p>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item">Hot dishes</a></li>
+                                            <li><a class="dropdown-item">Cold dishes</a></li>
+                                            <li><a class="dropdown-item">Vegan</a></li>
+                                            <li><a class="dropdown-item">Spicy</a></li>
+                                            <li><a class="dropdown-item">Desserts</a></li>
+                                            <li><a class="dropdown-item">Drinks</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <p style="vertical-align: top; padding-top: 15px;">조리 시간 <input name="cookingTime" type="text" placeholder="예) 80분" style="border: solid"></p>
+                                    <p style="vertical-align: top; padding-top: 15px;">레시피 순서<textarea name="content" type="text" placeholder="자세하게 적어주세요" style="height: 800px; border: solid; vertical-align: top;"></textarea></p>
+                                    <div id="image_container" style="width: 300px; height: 300px; border: black solid;"></div>
+                                    <p><input type="file" id="image" name="file" accept="image/*" onchange="setThumbnail(event);" style="padding-top: 5px;"></p>
+                                    <p style="vertical-align: top; text-align: left; padding-top: 30px;">재료 목록
+                                        <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 300px; height: 500px; border: solid;">
+
+                                        </textarea></p>
+                                    <script>
+                                        function setThumbnail(event) {
+                                            const reader = new FileReader();
+
+                                            reader.onload = function(event) {
+                                                const img = document.createElement("img");
+                                                img.setAttribute("src", event.target.result);
+                                                img.style.width = '300px';
+                                                img.style.height = '300px';
+                                                document.querySelector("div#image_container").appendChild(img);
+                                            };
+
+                                            reader.readAsDataURL(event.target.files[0]);
+                                        }
+                                    </script>
                                 </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" onclick="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        카테고리 선택
-                                    </button>
-                                    <p style="font-size: small; color: dimgray">카테고리를 꼭 선택해주세요!</p>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item">Hot dishes</a></li>
-                                        <li><a class="dropdown-item">Cold dishes</a></li>
-                                        <li><a class="dropdown-item">Vegan</a></li>
-                                        <li><a class="dropdown-item">Spicy</a></li>
-                                        <li><a class="dropdown-item">Desserts</a></li>
-                                        <li><a class="dropdown-item">Drinks</a></li>
-                                    </ul>
-                                </div>
+
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="p-1">
-                                <p><input type="file" name="file"></p>
-                                <p style="vertical-align: top">재료 목록 <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 300px; height: 600px;"></textarea></p>
+                                <p>대표이미지를 선택해주세요</p>
+                                <div id="thumb_container" style="width: 300px; height: 300px; border: black solid;"></div>
+                                <p><input type="file" id="thumb" name="file" accept="image/*" onchange="setThumbnail(event);" style="padding-top: 5px;"></p>
+                                <p style="vertical-align: top; text-align: left; padding-top: 30px;">재료 목록 <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 300px; height: 500px; border: solid;"></textarea></p>
+                                <script>
+                                    function setThumbnail(event) {
+                                        const reader = new FileReader();
+
+                                        reader.onload = function(event) {
+                                            const thumb = document.createElement("thumb");
+                                            thumb.setAttribute("src", event.target.result);
+                                            thumb.style.width = '300px';
+                                            thumb.style.height = '300px';
+                                            document.querySelector("div#thumb_container").appendChild(thumb);
+                                        };
+
+                                        reader.readAsDataURL(event.target.files[0]);
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center"><input type="submit" value="작성"></div>
+                <div style="text-align: center; padding-top: 20px;"><input type="submit" value="작성"></div>
             </form>
         </div>
     </div>

@@ -25,4 +25,13 @@ public class FileEntity{
     @JoinColumn(name = "recipe_id")
     private RecipeEntity recipeEntity;
 
+    public static FileEntity toFileEntity(RecipeEntity recipeEntity, String originalFileName, String storedFileName){
+        FileEntity fileEntity = new FileEntity();
+        fileEntity.setOriginalFileName(originalFileName);
+        fileEntity.setStoredFileName(storedFileName);
+        fileEntity.setRecipeEntity(recipeEntity);  //PK값이 아닌 부모엔티티 객체를 넘겨줘야함!
+        return fileEntity;
+    }
+
+
 }

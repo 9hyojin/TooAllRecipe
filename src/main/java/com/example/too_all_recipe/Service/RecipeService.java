@@ -1,7 +1,9 @@
 package com.example.too_all_recipe.Service;
 
 import com.example.too_all_recipe.DTO.RecipeDTO;
+import com.example.too_all_recipe.Entity.FileEntity;
 import com.example.too_all_recipe.Entity.RecipeEntity;
+import com.example.too_all_recipe.Repository.FileRepository;
 import com.example.too_all_recipe.Repository.RecipeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RecipeService {
     private final RecipeRepository recipeRepository;
+    private final FileRepository fileRepository;
     public void save(RecipeDTO recipeDTO) throws IOException {
         //파일 첨부 여부에 따라 로직 분리
         if (recipeDTO.getFile().isEmpty()){
@@ -38,6 +41,12 @@ public class RecipeService {
             String storedFileName = System.currentTimeMillis() + "_" + originalFilename; // 3.  uuid를 사용해도 되고, currentTimeMillis 사용해도 됨.
             String savePath = "/Users/koo/springboot_img/" + storedFileName;
             file.transferTo(new File(savePath)); // 5.
+            RecipeEntity recipeEntity = RecipeEntity.toSaveFileEntity(recipeDTO);
+            Long saveId = recipeRepository.save(recipeEntity).getId();  //getId 하는 이유: 자식테이블에서는 부모의 PK가 필요함. (Long타입 아닌 RecipeEntity타입)
+            RecipeEntity recipe = recipeRepository.findById(saveId).get(); //부모 엔티티를 db에서 가져옴
+
+            FileEntity fileEntity = FileEntity.toFileEntity(recipe, originalFilename , storedFileName);
+            fileRepository.save(fileEntity);
 
         }
 

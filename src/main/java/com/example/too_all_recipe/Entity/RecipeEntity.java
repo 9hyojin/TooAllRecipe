@@ -55,4 +55,14 @@ public class RecipeEntity {
     }
 
 
+    public static RecipeEntity toSaveFileEntity(RecipeDTO recipeDTO) {
+        RecipeEntity recipeEntity = new RecipeEntity();
+        recipeEntity.setTitle(recipeDTO.getTitle());
+        recipeEntity.setIntroduce(recipeDTO.getIntroduce());
+        recipeEntity.setCookingTime(recipeDTO.getCookingTime());
+        recipeEntity.setContent(recipeDTO.getContent());
+        recipeEntity.setIngredients(recipeDTO.getIngredients());
+        recipeEntity.setFileAttached(1); //파일 첨부
+        return recipeEntity;
+    }
 }

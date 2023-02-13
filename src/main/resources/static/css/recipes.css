@@ -80,6 +80,7 @@ a:link{
 
 .recipe-form{
     background-color: rgb(249,249,249);
+    padding-bottom: 70px;
 }
 .upload-text1{
     font-size: xx-large;
@@ -89,7 +90,6 @@ a:link{
 .recipe-form-text{
     width:600px;
     text-align: right;
-    padding-top: 5%;
 }
 input{
     width:500px;

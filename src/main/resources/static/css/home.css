@@ -31,7 +31,7 @@
 .second-text{
     padding-top: 5%;
     text-align: center;
-    font-size: small;
+    font-size:medium;
     font-weight: bold;
     line-height: 200%;
 }
@@ -53,13 +53,13 @@
     background-color: floralwhite;
 }
 .about-text{
-    font-size: small;
+    font-size: medium;
     text-align: left;
     font-weight: bold;
     padding-top: 4%;
 }
 .about-a{
-    font-size: small;
+    font-size: medium;
     text-align: left;
     color: sienna;
     padding-top: 8%;
