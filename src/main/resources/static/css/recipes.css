@@ -98,3 +98,13 @@ textarea{
     width:500px;
 
 }
+/*-----------------*/
+.ui-sortable {
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    box-sizing: border-box;
+}

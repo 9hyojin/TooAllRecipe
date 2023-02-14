@@ -39,49 +39,29 @@
     <div id="container" role="main" >
         <div class="recipe-form">
             <p class="upload-text1" style="padding-top: 50px;">레시피올리기</p>
+
             <form action="/recipes/save" method="post" enctype="multipart/form-data" >
+
                 <div class="container text-center">
                     <div class="row g-2">
                         <div class="col-md-8">
                             <div class="p-1">
                                 <div class="recipe-form-text">
-                                    <p style="padding-top: 20px;">제목 <input name="title" type="text" placeholder="예) 저탄수 가지덮밥" style="border: solid;"></p>
-                                    <p style="padding-top: 15px;">요리 소개 <textarea name="introduce" type="text" placeholder="요리를 간단히 소개해주세요" style="height: 100px; text-align: left; border: solid; vertical-align: top;"></textarea></p>
-                                    <div class="dropdown" style="padding-top: 10px;">
-                                        <button class="btn btn-secondary dropdown-toggle" onclick="" type="button" data-bs-toggle="dropdown" aria-expanded="false">카테고리 선택</button>
-                                        <p style="font-size: small; color: dimgray; padding-top: 15px;">카테고리를 꼭 선택해주세요!</p>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item">Hot dishes</a></li>
-                                            <li><a class="dropdown-item">Cold dishes</a></li>
-                                            <li><a class="dropdown-item">Vegan</a></li>
-                                            <li><a class="dropdown-item">Spicy</a></li>
-                                            <li><a class="dropdown-item">Desserts</a></li>
-                                            <li><a class="dropdown-item">Drinks</a></li>
-                                        </ul>
+                                    <p style="padding-top: 20px;">제목 <input name="title" type="text" placeholder="예) 저탄수 가지덮밥" style="border: solid; padding-left: 10px;"></p>
+                                    <p style="padding-top: 15px;">요리 소개 <textarea name="introduce" type="text" placeholder="요리를 간단히 소개해주세요" style="height: 100px; padding-left: 10px; text-align: left; border: solid; vertical-align: top;"></textarea></p>
+                                    <div style="padding-left: 400px;">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" STYLE="width: 200px; background-color: lightgrey">
+                                            <option selected>카테고리 선택</option>
+                                            <option value="1">Hot dishes</option>
+                                            <option value="2">Cold dishes</option>
+                                            <option value="3">Vegan</option>
+                                            <option value="2">Spicy</option>
+                                            <option value="2">Desserts</option>
+                                            <option value="2">Drinks</option>
+                                        </select>
                                     </div>
-                                    <p style="vertical-align: top; padding-top: 15px;">조리 시간 <input name="cookingTime" type="text" placeholder="예) 80분" style="border: solid"></p>
-                                    <p style="vertical-align: top; padding-top: 30px; ">레시피 순서
-                                    <input type="file" id="image" name="file" accept="image/*" onchange="setImage(event);">
-                                    <div style="padding-left: 100px;">
-                                        <div contentEditable="true" name="content" type="text" placeholder="자세하게 적어주세요" style="width: 500px; height: 800px; border: solid; vertical-align: top; text-align: center">
-                                            <div id="image_container"></div>
-                                            <script>
-                                                function setImage(event) {
-                                                    const reader = new FileReader();
-
-                                                    reader.onload = function(event) {
-                                                        const img = document.createElement("img");
-                                                        img.setAttribute("src", event.target.result);
-                                                        img.style.width = '200px';
-                                                        img.style.height = '200px';
-                                                        document.querySelector("div#image_container").appendChild(img);
-                                                    };
-
-                                                    reader.readAsDataURL(event.target.files[0]);
-                                                }
-                                            </script></p>
-                                        </div>
-                                    </div>
+                                    <p style="font-size: small; color: dimgray; padding-top: 15px;">카테고리를 꼭 선택해주세요!</p>
+                                    <p style="vertical-align: top; padding-top: 15px;">조리 시간 <input name="cookingTime" type="text" placeholder="예) 80분" style="border: solid; padding-left: 10px;"></p>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +69,7 @@
                             <div class="p-1">
                                 <p>대표이미지를 선택해주세요</p>
                                 <p><input type="file" id="thumb" name="file" accept="image/*" onchange="setThumbnail(event);"></p>
-                                <div id="thumb_container" style="width: 300px; height: 300px; border: black solid;"></div>
+                                <div id="thumb_container" style="width: 300px; height: 300px;"></div>
                                 <script>
                                     function setThumbnail(event) {
                                         const reader = new FileReader();
@@ -105,21 +85,63 @@
                                         reader.readAsDataURL(event.target.files[0]);
                                     }
                                 </script>
-                                <p style="vertical-align: top; text-align: left; padding-top: 20px;">재료 목록 <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width: 300px; height: 600px; border: solid"></textarea></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center; padding-top: 20px;"><input type="submit" value="작성"></div>
+                <div>
+                    <div style="padding-left: 50px;">
+                        재료 목록 <textarea name="ingredients" type="text" placeholder="예) 돼지고기 300g" style="width:900px; height: 150px; border: solid; padding-left: 10px;"></textarea>
+                    </div>
+                </div>
+
+                <div id="divStepArea" class="ui-sortable"><div id="divStepItem_1" class="step">
+                    <p id="divStepNum_1" class="cont_tit2_1 ui-sortable-handle" style="cursor:pointer" data-original-title="" title="">Step1</p>
+                    <div id="divStepText_1" style="display:inline-block">
+                        <textarea name="step_text[]" id="step_text_1" class="form-control step_cont" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요." style="height:160px; width:430px; resize:none;"></textarea>
+                    </div>
+                    <div id="divStepUpload_1" style="display:inline-block">
+                        <input type="hidden" name="step_no[]" id="step_no_1" value="">
+                        <input type="hidden" name="step_photo[]" id="step_photo_1" value="">
+                        <input type="hidden" name="new_step_photo[]" id="new_step_photo_1" value="">
+                        <input type="hidden" name="del_step_photo[]" id="del_step_photo_1" value="">
+                        <div style="position:absolute;left:-3000px"><input type="file" name="file" id="q_step_file_1" file_gubun="step" accept="jpeg,png,gif" style="width:0px;height:0px;font-size:0px;" text=""></div>
+                        <div id="divStepPhotoBox_1" is_over="0">
+                            <img id="stepPhotoHolder_1" onclick="browseStepFile(1)" src="https://recipe1.ezmember.co.kr/img/pic_none2.gif" width="160" height="160" style="cursor:pointer" alt="stepImage">
+                            <script>
+                                function browseStepFile(number){
+                                    
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div id="divStepBtn_1" class="step_btn" style="display: none;">
+                        <a href="javascript:void(0)"><span class="glyphicon glyphicon-chevron-up moveUp"></span></a>
+                        <a href="javascript:void(0)"><span class="glyphicon glyphicon-chevron-down moveDown"></span></a>
+                        <a href="javascript:adjustStep(1)"><b>맞춤</b></a>
+                        <a href="javascript:addStep(1)"><span class="glyphicon glyphicon-plus"></span></a>
+                        <a href="javascript:delStep(1)"><span class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+                </div></div>
+                <button type="button" onclick="addStep()" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>순서추가</button>
+                <script>
+                    function addStep(number){
+
+                    }
+
+                    function adjustStep(number){
+
+                    }
+
+                    function delStep(number){
+
+                    }
+                </script>
+
             </form>
         </div>
+        <div style="text-align: center; padding-top: 20px;"><input type="submit" value="작성"></div>
     </div>
-
-
-
-
-
-
 
 
 </div>
