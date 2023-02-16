@@ -4,7 +4,8 @@ import com.example.too_all_recipe.Entity.RecipeEntity;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
+import java.io.File;
+
 
 @Getter
 @Setter
@@ -18,14 +19,12 @@ public class RecipeDTO {
     private String content;
     private String ingredients;
     private String cookingTime;
-
-    private List<MultipartFile> file;
-
+    private MultipartFile file;
     private String originalFileName; //원본 파일 이름
     private String storedFileName; // 서버 저장용 파일 이름 - 식별자 (uuid사용해도 됨)
     private Integer FileAttached; //파일 첨부 여부 (첨부 1, 미첨부 0)
 
-    public static RecipeDTO toRecipeDTO(RecipeEntity recipeEntity){
+    public static RecipeDTO toRecipeDTO(RecipeEntity recipeEntity) {
         RecipeDTO recipeDTO = new RecipeDTO();
         recipeDTO.setId(recipeEntity.getId());
         recipeDTO.setTitle(recipeEntity.getTitle());
@@ -35,5 +34,6 @@ public class RecipeDTO {
         recipeDTO.setIngredients(recipeEntity.getIngredients());
         return recipeDTO;
     }
-
 }
+
+

@@ -2,71 +2,53 @@
     position: relative;
 }
 .nav-item{
-    font-weight: bolder;
-    padding-right: 30px;
+    font-weight: bolder; padding-right: 30px;
 }
 .nav-item>a{
     color: black;
 }
 .d-inline-block{
-    padding-left: 30px;
-    width: 200px;
-    height: 50px;
+    padding-left: 30px; width: 200px; height: 50px;
 }
 .justify-content-end{
     padding-right: 30px;
 }
 #container{
-    position: relative;
-    width: 1200px;
-    padding: 20px 30px;
-    margin: 0 auto;
+    position: relative; width: 1200px; padding: 20px 30px; margin: 0 auto;
 }
 .first-text{
-    padding-top: 6%;
-    text-align: center;
-    font-size: xxx-large;
-    font-weight: bold;
+    padding-top: 6%; text-align: center; font-size: xxx-large; font-weight: bold;
 }
 .second-text{
-    padding-top: 5%;
-    text-align: center;
-    font-size:medium;
-    font-weight: bold;
-    line-height: 200%;
+    padding-top: 5%; text-align: center; font-size:medium; font-weight: bold; line-height: 200%;
 }
 .button-space{
-    text-align: center;
-    padding-top: 3%;
+    text-align: center; padding-top: 3%;
 }
 .btn-warning{
-    --bs-btn-padding-y: .25rem;
-    --bs-btn-padding-x: .5rem;
-    --bs-btn-font-size: .75rem;
+    --bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;
 
+}
+.smallTitle1{
+    font-size: small; text-align: left; color: sienna; font-weight: bold;
+}
+.mainTitle1{
+    font-size: xxx-large; text-align: left; font-weight: bolder;
 }
 .home-images{
     padding: 8%;
 }
 .home-about{
-    padding: 8%;
-    background-color: floralwhite;
+    padding: 8%; background-color: floralwhite;
 }
-.about-text{
-    font-size: medium;
-    text-align: left;
-    font-weight: bold;
-    padding-top: 4%;
+.mainText1{
+    font-size: medium; text-align: left; font-weight: bold; padding-top: 4%;
 }
 .about-a{
-    font-size: medium;
-    text-align: left;
-    color: sienna;
-    padding-top: 8%;
+    font-size: medium; text-align: left; color: sienna; padding-top: 8%;
 }
 .home-schedules{
-    background-color: whitesmoke;
-    padding: 6%;
+    background-color: whitesmoke; padding: 6%;
 }
 .cards{
     padding: 8%;
@@ -74,32 +56,104 @@
 .card{
     max-height: 350px;
 }
+.mainTitle2{
+    font-size: xxx-large; font-weight: bolder; text-align: center;
+}
+.mainText2{
+    text-align: center; padding-top: 15px; font-size: medium; font-weight: bold;
+}
 .recipes-text{
     align-content: center;
 }
-.home-recipes{
-    text-align: center;
-    padding: 8%;
+.smallTitle2{
+    font-size: small; text-align: center; color: sienna; font-weight: bold;
 }
-.button{
-    padding-top: 20px;
+.home-recipes{
+    text-align: center; padding: 8%;
 }
 .btn-secondary{
-    --bs-btn-padding-y: .25rem;
-    --bs-btn-padding-x: .5rem;
-    --bs-btn-font-size: .75rem;
+    --bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; font-weight: bold;  background-color: rgba(0,0,0,0.3); color: black; font-weight: bold; font-size:.70rem;
+}
+.smallTitle3{
+    font-size: small; text-align: left; color: sienna; font-weight: bold;
+}
+.mainTitle3{
+    font-size: xxx-large; text-align: left; font-weight: bolder;
+}
+.card-title{
+    font-weight: bold; font-size: medium;
+}
+.card-text{
+    font-size: small; font-weight: lighter;
+}
+.see-more{
+    text-decoration-line: underline;
+}
+.smallTitle4{
+    font-size: small; text-align: left; font-weight: bold;
+}
+.mainTitle4{
+    font-size: xxx-large; text-align: left; font-weight: bolder;
+}
+.process1{
+    font-weight: bolder; font-size: xx-large; padding-top: 40px;
+}
+.process2{
+    font-weight: bolder; font-size: xx-large; padding-top: 100px;
+}
+.process3{
+    font-weight: bolder; font-size: xx-large; padding-top: 100px;
+}
+.step1{
+    font-weight: bolder; font-size: x-large; text-align: left; padding-top: 40px;
+}
+.step3{
+    font-weight: bolder; font-size: x-large; text-align: left; padding-top: 40px;
+}
+.step5{
+    font-weight: bolder; font-size: x-large; text-align: left; padding-top: 40px;
+}
+.step2{
+    font-size: large; text-align: left; padding-top: 5px;
+}
+.step4{
+    font-size: large; text-align: left; padding-top: 5px;
+}
+.step6{
+    font-size: large; text-align: left; padding-top: 5px;
+}
+.smallTitle5{
+    font-size: small; text-align: center; color: sienna; font-weight: bold;
+}
+.mainTitle5{
+    font-size: xxx-large; text-align: center; font-weight: bolder;
+}
+.mainText5{
+    font-size: medium; text-align: center; font-weight: bold;
+}
+.button{
+    text-align: center; padding-top: 20px;
 }
 .recipes-category{
-    text-align: center;
-    padding: 8%;
-    font-weight: bold;
+    text-align: center; padding: 8%; font-weight: bold;
 }
 .recipes-category>a{
-    color: black;
+    color: black; font-size: large; padding: 20px;
+}
+.card-img-top{
+    height: 200px;
+}
+.smallTitle6{
+    font-weight: bold; font-size: small;
+}
+.mainTitle6{
+    font-size: xxx-large; font-weight: bolder;
+}
+.mainText6{
+    font-size: small; padding-top: 20px;
 }
 .home-our-process{
-    padding: 8%;
-    background-color: rgba(202,146,76,1);
+    padding: 8%; background-color: rgba(202,146,76,1);
 }
 .home-community{
     padding: 8%;
@@ -108,8 +162,7 @@
     font-weight: bold;
 }
 .home-contact{
-    padding: 8%;
-    background-color: rgba(145,67,50,1);
+    padding: 8%; background-color: rgba(145,67,50,1); text-align: center;
 }
 .contact-title{
     color: white;

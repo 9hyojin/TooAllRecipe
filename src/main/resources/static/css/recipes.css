@@ -2,62 +2,40 @@
     position: relative;
 }
 #container{
-    position: relative;
-    width: 1200px;
-    padding: 20px 30px;
-    margin: 0 auto;
+    position: relative; width: 1200px; padding: 20px 30px; margin: 0 auto;
 }
 .nav-item{
-    font-weight: bolder;
-    padding-right: 30px;
+    font-weight: bolder; padding-right: 30px;
 }
 .nav-item>a{
     color: black;
 }
 .d-inline-block{
-    padding-left: 30px;
-    width: 200px;
-    height: 50px;
+    padding-left: 30px; width: 200px; height: 50px;
 }
 .justify-content-end{
     padding-right: 30px;
 }
 .button-space{
-    text-align: center;
-    padding-top: 3%;
+    text-align: center; padding-top: 3%;
 }
 .btn-warning{
-    --bs-btn-padding-y: .25rem;
-    --bs-btn-padding-x: .5rem;
-    --bs-btn-font-size: .75rem;
-
+    --bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;
 }
 .recipes-text2{
-    padding-top: 6%;
-    text-align: center;
-    font-size: xxx-large;
-    font-weight: bold;
+    padding-top: 6%; text-align: center; font-size: xxx-large; font-weight: bold;
 }
 .recipes-text3{
-    padding-top: 5%;
-    text-align: center;
-    font-size: small;
-    font-weight: bold;
-    line-height: 200%;
+    padding-top: 5%; text-align: center; font-size: small; font-weight: bold; line-height: 200%;
 }
 .home-recipes{
-    text-align: center;
-    padding: 8%;
+    text-align: center; padding: 8%;
 }
 .recipes-category>a{
-    color: black;
-    font-size: large;
-    padding: 30px;
+    color: black; font-size: large; padding: 30px;
 }
 .recipes-category{
-    text-align: center;
-    padding: 8%;
-    font-weight: bold;
+    text-align: center; padding: 8%; font-weight: bold;
 }
 .recipes-category>a:hover{
     color: saddlebrown;
@@ -72,39 +50,64 @@ a:link{
     padding: 8%;
 }
 .recipe-choice-text1{
-    font-size: x-large;
-    font-weight: bold;
-    text-align: left;
+    font-size: x-large; font-weight: bold; text-align: left;
 }
 /*-------------------------------*/
 
 .recipe-form{
-    background-color: rgb(249,249,249);
-    padding-bottom: 70px;
+    background-color: rgb(249,249,249); padding-bottom: 10%;
 }
 .upload-text1{
-    font-size: xx-large;
-    font-weight: bold;
-    text-align: center;
+    font-size: xx-large; font-weight: bold; text-align: center; padding-top: 5%;
 }
 .recipe-form-text{
-    width:600px;
-    text-align: right;
+    width:600px; text-align: right; vertical-align: top;
 }
-input{
-    width:500px;
+.recipe-form-text>input{
+    border: solid; padding-left: 10px;
 }
-textarea{
-    width:500px;
-
+.recipe-form-text>textarea{
+    height: 100px; padding-left: 3%; text-align: left; border: solid; vertical-align: top;
 }
-/*-----------------*/
-.ui-sortable {
-    font-family: 'Noto Sans KR', sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    box-sizing: border-box;
+.recipeTitle>input{
+    width: 500px; border: solid; padding-left: 10px;
+}
+.recipeIntroduce{
+    padding-top: 3%;
+}
+.recipeIntroduce>textarea{
+    width: 500px; border: solid; padding-left: 10px;
+}
+.category-text{
+    font-size: small; color: dimgray; padding-top: 1%;
+}
+.recipe-form-text2{
+    vertical-align: center;
+}
+.cookingTime-text>input{
+    border: solid; padding-left: 10px; width: 500px;
+}
+.ingredients-text{
+    padding-top: 3%;
+}
+.ingredients-text>textarea{
+    height: 150px; border: solid; padding-left: 10px; width: 500px;
+}
+.thumbContainer{
+    width: 300px; height: 300px;
+}
+.text-center2{
+    padding-right: 10%; vertical-align: top; text-align: right;
+}
+.recipeStep{
+    vertical-align: top; padding-top: 15px; padding-right: 10%; padding-top: 3%;
+}
+.recipeStep>textarea{
+    width:900px; height: 500px; border: solid; padding-left: 10px;
+}
+.btn-submit{
+    text-align: center; padding-top: 20px;"
+}
+.categories{
+    padding-left: 75%; width: 600px;
 }
