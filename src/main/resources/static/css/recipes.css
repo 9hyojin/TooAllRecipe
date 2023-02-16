@@ -111,3 +111,6 @@ a:link{
 .categories{
     padding-left: 75%; width: 600px;
 }
+.card-img-top{
+    height: 200px;
+}

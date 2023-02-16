@@ -27,16 +27,23 @@ public class RecipeController {
     @PostMapping("/recipes/save")
     public String save(@ModelAttribute RecipeDTO recipeDTO) throws IOException {
         recipeService.save(recipeDTO);
-        return "/recipes/list";
+        return "/recipes/recipes";
     }
 
     @GetMapping("/recipes")
     public String findAll(Model model) {
-        //DB에서 전체글의 데이터를 가져와서 list.html에 전달.
+        //DB에서 전체글의 데이터를 가져와서 recipes.html에 전달.
         List<RecipeDTO> recipeDTOList = recipeService.findAll();
         model.addAttribute("recipeList", recipeDTOList);
-        return "/recipes/list";
+        return "/recipes/recipes";
     }
 
+//    @GetMapping("/recipes")
+//    public String toCards(Model model) {
+//        //DB에서 글의 데이터를 가져와서 recipe.html에 전달.
+//        List<RecipeDTO> recipeDTOList = recipeService.findAll();
+//        model.addAttribute("recipeList", recipeDTOList);
+//        return "/recipes/recipes";
+//    }
 }
 

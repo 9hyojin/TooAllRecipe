@@ -55,6 +55,16 @@ public class RecipeService {
 
 
 
+//
+//    public List<RecipeDTO> findAll() {
+//        List<RecipeEntity> recipeEntityList = recipeRepository.findAll();
+//        List<RecipeDTO> recipeDTOList = new ArrayList<>();
+//        for (RecipeEntity recipeEntity : recipeEntityList) {
+//            recipeDTOList.add(RecipeDTO.toRecipeDTO(recipeEntity));
+//        }
+//        return recipeDTOList;
+//    }
+//}
 
     public List<RecipeDTO> findAll() {
         List<RecipeEntity> recipeEntityList = recipeRepository.findAll();
