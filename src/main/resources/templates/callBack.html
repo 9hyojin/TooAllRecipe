@@ -19,16 +19,16 @@
         <img class="d-inline-block align-text-top" src="/images/logo.png" alt="Logo">
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link " href="home">Home</a>
+            <a class="nav-link " href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="recipes" >Recipes</a>
+            <a class="nav-link" href="/recipes" >Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop" >Shop</a>
+            <a class="nav-link" href="/shop" >Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="place"  >Place</a>
+            <a class="nav-link" href="/place"  >Place</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"  >My</a>
@@ -46,11 +46,11 @@
       <p class="detailRecipeTitle" >Recipe </p>
 
       <div class="detailRecipeForm" >
-        <div class="recipeTitle" >제목 <div class="detailTitle" th:text="${callBack.title}"></div></div>
-        <div class="recipeIntroduce" >요리 소개 <div class="detailIntro" th:text="${callBack.introduce}"></div></div>
-        <div class="cookingTime-text" >조리 시간 <div class="detailTime" th:text="${callBack.cookingTime}"></div></div>
-        <div class="ingredients-text" >재료 목록 <div class="detailIngre" th:text="${callBack.ingredients}"></div></div>
-        <div class="recipeStep" >레시피순서 <div class="detailStep" th:text="${callBack.content}"></div></div>
+        <div class="recipeTitle" >제목 <div class="detailTitle" th:text="${recipeDTO.title}"></div></div>
+        <div class="recipeIntroduce" >요리 소개 <div class="detailIntro" th:text="${recipeDTO.introduce}"></div></div>
+        <div class="cookingTime-text" >조리 시간 <div class="detailTime" th:text="${recipeDTO.cookingTime}"></div></div>
+        <div class="ingredients-text" >재료 목록 <div class="detailIngre" th:text="${recipeDTO.ingredients}"></div></div>
+        <div class="recipeStep" >레시피순서 <div class="detailStep" th:text="${recipeDTO.content}"></div></div>
         <!--        <img class="detailImg" style="border: solid" th:src="@{|/Users/koo/springboot_img/${fileEntity.storedFileName}|}">-->
       </div>
     </div>

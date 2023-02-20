@@ -19,16 +19,16 @@
         <img class="d-inline-block align-text-top" src="/images/logo.png" alt="Logo">
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link " href="home">Home</a>
+            <a class="nav-link " href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="recipes" >Recipes</a>
+            <a class="nav-link" href="/recipes" >Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop" >Shop</a>
+            <a class="nav-link" href="/shop" >Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="place"  >Place</a>
+            <a class="nav-link" href="/place"  >Place</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"  >My</a>
@@ -41,7 +41,6 @@
   <div id="container" role="main">
     <div class="recipe-form">
       <p class="detailRecipeTitle" >Recipe </p>
-<!--      <div th:text="${recipe.id}">-->
       <div class="recipeTitle" >제목 <div class="detailTitle" th:text="${recipe.title}"></div></div>
       <div class="recipeIntroduce" >요리 소개 <div class="detailIntro" th:text="${recipe.introduce}"></div></div>
       <div class="cookingTime-text" >조리 시간 <div class="detailTime" th:text="${recipe.cookingTime}"></div></div>
