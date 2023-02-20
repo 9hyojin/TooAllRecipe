@@ -16,7 +16,7 @@
     <div id="header" role="banner">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <img class="d-inline-block align-text-top" src="./images/logo.png" alt="Logo">
+                <img class="d-inline-block align-text-top" src="/images/logo.png" alt="Logo">
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
                         <a class="nav-link " href="home">Home</a>
@@ -25,10 +25,10 @@
                         <a class="nav-link" href="recipes" >Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" >Schedules</a>
+                        <a class="nav-link" href="shop" >Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"  >Community</a>
+                        <a class="nav-link" href="place"  >Place</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"  >My</a>
@@ -45,7 +45,7 @@
                 <p class="recipes-text2" style="font-size: xxx-large; font-weight: bolder; text-align: center"> Show off your own Recipes!<br></p>
                 <p class="recipes-text3" style="text-align: center; padding-top: 15px; font-size: medium; font-weight: bold">나만 알고 있는 맛있는 레시피 함께 나눠요!</p>
                 <p class="button-space">
-                    <button class="btn btn-warning" type="button" onclick="location.href='/recipes/save'" style="font-weight: bold"> Share my recipe </button>
+                    <button class="btn btn-warning" type="button" onclick="location.href='/recipes/saveForm'" style="font-weight: bold"> Share my recipe </button>
                 </p>
             </div>
             <div class="recipes-category">
@@ -57,21 +57,16 @@
                 <a class="category-drinks" href="#">Drinks</a>
             </div>
         </div>
-        <div class="recipe-cards">
-            <div class="row row-cols-1 row-cols-md-3 g-4" th:each="recipe : ${recipeList}">
-                <div class="col">
-                    <div class="card h-100">
+        <div class="card-group" style="text-align: center;">
+            <div th:each="recipe : ${recipeList}" style="padding-left: 5%; padding-top: 5%">
+                <div class="card" style="width: 300px; height: 300px;">
+                    <div class="card-body"><a th:href="@{|/recipe/${recipe.id}|}">
                         <img class="card-img-top" th:src="@{|/Users/koo/springboot_img/${recipe.storedFileName}|}">
-                        <div class="card-body">
-                            <a href="#"></a>
-                            <p class="card-text" th:text="${recipe.title}"></p>
-                        </div>
+                        <h5 class="card-title" th:text="${recipe.title}"></h5></a>
                     </div>
                 </div>
             </div>
         </div>
-
-<!--        th:href="@{|/recipes/${recipe.id}|}"-->
 
 
 

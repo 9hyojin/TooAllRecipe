@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>TOALLRecipe</title>
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="/css/recipeDetail.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+<div id="wrapper">
+  <div id="header" role="banner">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <img class="d-inline-block align-text-top" src="/images/logo.png" alt="Logo">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link " href="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="recipes" >Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop" >Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="place"  >Place</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"  >My</a>
+          </li>
+          <button class="btn btn-secondary" type="button" style="font-weight: bold">Login</button>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div id="container" role="main">
+    <p th:utext="${callBack}"></p>
+    <div th:each="recipeDTO : ${callBack}"></div>
+    <div class="recipe-form">
+      <p class="detailRecipeTitle" >Recipe </p>
+
+      <div class="detailRecipeForm" >
+        <div class="recipeTitle" >제목 <div class="detailTitle" th:text="${callBack.title}"></div></div>
+        <div class="recipeIntroduce" >요리 소개 <div class="detailIntro" th:text="${callBack.introduce}"></div></div>
+        <div class="cookingTime-text" >조리 시간 <div class="detailTime" th:text="${callBack.cookingTime}"></div></div>
+        <div class="ingredients-text" >재료 목록 <div class="detailIngre" th:text="${callBack.ingredients}"></div></div>
+        <div class="recipeStep" >레시피순서 <div class="detailStep" th:text="${callBack.content}"></div></div>
+        <!--        <img class="detailImg" style="border: solid" th:src="@{|/Users/koo/springboot_img/${fileEntity.storedFileName}|}">-->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+

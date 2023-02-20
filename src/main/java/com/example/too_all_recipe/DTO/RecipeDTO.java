@@ -1,5 +1,6 @@
 package com.example.too_all_recipe.DTO;
 
+import com.example.too_all_recipe.Entity.FileEntity;
 import com.example.too_all_recipe.Entity.RecipeEntity;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,8 +33,21 @@ public class RecipeDTO {
         recipeDTO.setContent(recipeEntity.getContent());
         recipeDTO.setCookingTime(recipeEntity.getCookingTime());
         recipeDTO.setIngredients(recipeEntity.getIngredients());
+        if (recipeEntity.getFileAttached() == 0) {
+            recipeDTO.setFileAttached(recipeEntity.getFileAttached()); // 0
+        } else {
+            recipeDTO.setFileAttached(recipeEntity.getFileAttached()); // 1
+            // 파일 이름을 가져가야 함.
+            // orginalFileName, storedFileName : board_file_table(BoardFileEntity)
+            // join
+            // select * from board_table b, board_file_table bf where b.id=bf.board_id
+            // and where b.id=?
+            recipeDTO.setOriginalFileName(recipeEntity.getFileEntityList().get(0).getOriginalFileName());
+            recipeDTO.setStoredFileName(recipeEntity.getFileEntityList().get(0).getStoredFileName());
+        }
         return recipeDTO;
     }
 }
+
 
 

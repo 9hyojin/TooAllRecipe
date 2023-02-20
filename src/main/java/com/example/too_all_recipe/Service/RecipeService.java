@@ -5,6 +5,7 @@ import com.example.too_all_recipe.Entity.FileEntity;
 import com.example.too_all_recipe.Entity.RecipeEntity;
 import com.example.too_all_recipe.Repository.FileRepository;
 import com.example.too_all_recipe.Repository.RecipeRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -51,21 +53,7 @@ public class RecipeService {
         }
     }
 
-
-
-
-
-//
-//    public List<RecipeDTO> findAll() {
-//        List<RecipeEntity> recipeEntityList = recipeRepository.findAll();
-//        List<RecipeDTO> recipeDTOList = new ArrayList<>();
-//        for (RecipeEntity recipeEntity : recipeEntityList) {
-//            recipeDTOList.add(RecipeDTO.toRecipeDTO(recipeEntity));
-//        }
-//        return recipeDTOList;
-//    }
-//}
-
+    @Transactional
     public List<RecipeDTO> findAll() {
         List<RecipeEntity> recipeEntityList = recipeRepository.findAll();
         List<RecipeDTO> recipeDTOList = new ArrayList<>();
@@ -74,4 +62,20 @@ public class RecipeService {
         }
         return recipeDTOList;
     }
+
+    @Transactional
+    public RecipeDTO findById(Long id) {
+        Optional<RecipeEntity> optionalRecipeEntity = recipeRepository.findById(id);
+        if (optionalRecipeEntity.isPresent()) {
+            RecipeEntity recipeEntity = optionalRecipeEntity.get();
+            RecipeDTO recipeDTO = RecipeDTO.toRecipeDTO(recipeEntity);
+            return recipeDTO;
+        } else {
+            return null;
+        }
+    }
+
+
+
+
 }
