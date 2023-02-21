@@ -15,4 +15,18 @@ public class HomeController {
         return "place";
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @GetMapping("/shop")
+    public String shop(){
+        return "shop";
+    }
+
+    @GetMapping("/my")
+    public String my(){
+        return "my";
+    }
 }

@@ -1,0 +1,24 @@
+#header{
+    position: relative;
+}
+#container{
+    position: relative; width: 1200px; padding: 20px 30px; margin: 0 auto;
+}
+.nav-item{
+    font-weight: bolder; padding-right: 30px;
+}
+.nav-item>a{
+    color: black;
+}
+.d-inline-block{
+    padding-left: 30px; width: 200px; height: 50px;
+}
+.justify-content-end{
+    padding-right: 30px;
+}
+.placeTitle{
+    padding-top: 6%; text-align: center; font-size: xxx-large; font-weight: bold;
+}
+.placeText{
+    padding-top: 5%; text-align: center; font-size:medium; font-weight: bold; line-height: 200%;
+}
