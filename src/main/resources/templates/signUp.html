@@ -28,14 +28,23 @@
     <div id="container" role="main" style="padding-top: 5%;">
         <p class="signUpTitle"> Please join us!<br></p>
         <div class="signUp">
-            <form action="/signUp" method="post">
-                <p><input name="loginId" type="text" placeholder=" 아이디 또는 이메일" s></p>
-                <p><input name="userName" type="text" placeholder=" 이름"></p>
-                <p><input name="userPassword" type="password" placeholder=" 비밀번호"></p>
-                <p><input name="password2" type="password" placeholder=" 비밀번호 확인"></p>
+            <form th:action="@{/user}" method="POST">
+                email : <input type="text" name="email"> <br>
+                password : <input type="password" name="password"> <br>
+                <input type="radio" name="auth" value="ROLE_ADMIN,ROLE_USER"> admin
+                <input type="radio" name="auth" value="ROLE_USER" checked="checked"> user <br>
+                <button type="submit">Join</button>
+            </form> <br>
 
-                <div class="btn-submit" style="padding-top: 5%"><input type="submit" value="회원가입"></div>
-            </form>
+            <a href="/login">Go to login →</a>
+<!--            <form action="/signUp" method="post">-->
+<!--                <p><input name="loginId" type="text" placeholder=" 이메일(아이디)" s></p>-->
+<!--                <p><input name="userName" type="text" placeholder=" 이름"></p>-->
+<!--                <p><input name="userPassword" type="password" placeholder=" 비밀번호"></p>-->
+<!--&lt;!&ndash;                <p><input name="password2" type="password" placeholder=" 비밀번호 확인"></p>&ndash;&gt;-->
+
+<!--                <div class="btn-submit" style="padding-top: 5%"><input type="submit" value="회원가입"></div>-->
+<!--            </form>-->
         </div>
     </div>
 </div>
